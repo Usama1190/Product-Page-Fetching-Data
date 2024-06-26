@@ -21,7 +21,7 @@ let myFetch = fetch('https://jsonplaceholder.typicode.com/todos').then((data) =>
 
 
             let innerDiv = document.createElement('div');
-            let innerDivText = document.createTextNode('150 X 150');
+            let innerDivText = document.createTextNode('150 X 210');
             innerDiv.appendChild(innerDivText);
             innerDiv.classList.add('innerDiv');
             elementCreate.appendChild(innerDiv);
@@ -38,6 +38,7 @@ let myFetch = fetch('https://jsonplaceholder.typicode.com/todos').then((data) =>
             if(data[i].completed === false) {
                 elementCreate.classList.add('false');
                 addBtn.classList.add('btn_disabled');
+                // addBtn.disabled = true;
             }
         }
     })

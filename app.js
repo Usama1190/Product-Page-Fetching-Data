@@ -21,7 +21,7 @@ let myFetch = fetch('https://jsonplaceholder.typicode.com/todos').then((data) =>
 
 
             let innerDiv = document.createElement('div');
-            let innerDivText = document.createTextNode('150 X 210');
+            let innerDivText = document.createTextNode('150 X 150');
             innerDiv.appendChild(innerDivText);
             innerDiv.classList.add('innerDiv');
             elementCreate.appendChild(innerDiv);
@@ -38,11 +38,27 @@ let myFetch = fetch('https://jsonplaceholder.typicode.com/todos').then((data) =>
             if(data[i].completed === false) {
                 elementCreate.classList.add('false');
                 addBtn.classList.add('btn_disabled');
-                // addBtn.disabled = true;
+                // addBtn.setAttribute(disabled, true);
             }
         }
     })
     .catch((err) => {
         console.log(err, "Error");
     })
-})
+});
+
+
+document.getElementById('btn_filter').addEventListener('click', function() {
+    let userSubmitValue = document.getElementById('filter').value;
+    console.log(userSubmitValue);
+
+    if(userSubmitValue == 3) {
+        let warningDetech = document.getElementById('show_error');
+        warningDetech.innerHTML = 'Input field is not valid';
+        warningDetech.classList.add('danger');
+    }
+    else {
+        let warningClear = document.getElementById('show_error');
+        warningClear.innerHTML = '';
+    }
+});

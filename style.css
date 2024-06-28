@@ -9,6 +9,7 @@ body {
     position: sticky;
     top: 0;
     display: flex;
+    z-index: 99;
     justify-content: space-around;
     background-color: #fff;
     padding: 15px 10px;
